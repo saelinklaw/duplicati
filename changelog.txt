@@ -1,3 +1,161 @@
+2021-01-20 - 2.0.5.112_canary_2021-01-20
+==========
+Hightlights for this update:
+* Stability improvements
+* Error/help message improvemens
+* New Telegram backend
+
+Detailed list:
+* Improved testing, thanks @warwickmm
+* Disabled legacy path handling, thanks @dferreyra
+* Bugfix for rclone backend (wrong paths), thanks @warwickmm
+* Bugfix for Sia backend, thanks @warwickmm
+* Fixed check for admin privileges on Synology, thanks @warwickmm
+* Defer uploading fileset to guard against missing blocks error, thanks @seantempleton
+* Fixed setting background-io-priority, thanks @achims311
+* Added Telegram backend, thanks @martikyan
+* Improved error logging on restore, thanks @barfoo4711
+* Improved commandline documentation, thanks @apreiml
+* Bugfix for run-script-before ignoring remoteurl, thanks @warwickmm
+* Better error messages, thanks @warwickmm
+* Code quality improvements, thanks @warwickmm
+* Fixed error that occured when using the dry-run option of purge-broken-files, thanks @warwickmm
+* Fixed logging errors when reading symlink targers, thanks @warwickmm
+* Fixed error in OpenStack configuration UI, thanks @warwickmm
+* Better error messages if webrequests return null, thanks @Gurthurb
+* Fixed password manager autofill, thanks @drwtsn32x
+* Updated CI GUI tests to work again and use Python3, thanks @warwickmm
+* Fixed an issue that caused restore errors when running in Docker, thanks @warwickmm
+
+2020-09-26 - 2.0.5.111_canary_2020-09-26
+==========
+* Support for Windows paths starting with "\\?\", thanks @dferreyra
+* Improved performance of USN, thanks @dgehri
+* Improved performance for restoring, thanks @pcmind
+* Added support for filters with literals that would normally be treated as wildcards, thanks @dferreyra
+* Improved build and tests, thanks @warwickmm and @dferreyra
+* Switched to the new built-in .Net support for long paths, thanks @dferreyra
+* Fixed issues with the Docker images by including mono-complete, thanks @warwickmm
+* Fixed an issue with exporting passwords with url-encoding characters, thanks @warwickmm
+* Fixed an issue with displaying icons in the restore tree, thanks @warwickmm
+* Fixed a type that prevented a warning box from showing, thanks @warwickmm
+* Added Storadera as an S3 destination, thanks @warwickmm
+
+2020-08-10 - 2.0.5.110_canary_2020-08-10
+==========
+* Fixed an issue with snapshot paths, thanks @dferreyra
+
+2020-08-07 - 2.0.5.109_canary_2020-08-07
+==========
+* Fixed hiding compression errors, thanks @jpschewe
+* Fixed Tardigrade backend issues, thanks @TopperDEL
+* Fixed a case where the recovery tool would fail to recover files witth dashes in the name, thanks @dferreyra
+* Improved handling of "problematic" filenames on Windows and increased test coverage, thanks @dferreyra
+* Improved test coverage for invalid paths and removed unused code, thanks @warwickmm
+* Improved code to remove remote files to better support remote folders that are not exclusively used by Duplicati, thanks @warwickmm
+* Updated to use and require .Net 4.7.1, thanks @warwickmm
+* Updated USN support to work with the newer Windows features for moving instead of deleting files, thanks @dgehri
+
+2020-07-09 - 2.0.5.108_canary_2020-07-09
+==========
+* Removed unsupported compiler directives, thanks @kenkendk
+* Removed incorrect missing SSL certificate warnings, thanks @kenkendk
+* Upograded to retina icons, thanks @baumerdev
+* Updates to Tardigrade support, thanks @TopperDEL
+* Added Tencent Cloud Object Storage (COS) backend, thanks @trueai-org
+* Improved error reporting for S3 backend, thanks @jpschewe
+* Added the Milan EU region to AWS S3 regions, thanks @warwickmm
+* Fixed incorrect documentation on OpenStack help, thanks @warwickmm
+* Fixed an incorrect endpoint for AWS S3 Bahrain, thanks @warwickmm
+* Code cleanup, thanks @warwickmm
+* Fixed a case where restoring files could fail if the containing folder was not restored, thanks @warwickmm
+* Improved unittests, thanks @warwickmm
+
+2020-05-26 - 2.0.5.107_canary_2020-05-26
+==========
+* Added a backend for Tardigrade.io, thanks @TopperDEL
+* Updated translations, thanks to all translators!
+
+2020-05-11 - 2.0.5.106_canary_2020-05-11
+==========
+NOTE: this version updates the database version from v10 to v11!
+
+Downgrade from this version requires manually adjusting the version number in the database,
+The additions can be re-applied if the database is upgraded again later.
+
+* Added certificate dependency to debian packages, thanks @borfast
+* Sorting files and folders in the WEB UI, thanks @drwtsn32x
+* Code cleanup, unused code removal and more, thanks @warwickmm
+* Updated exclusion folder list, thanks @drwtsn32x
+* Fixed spelling issues for CLI help, thanks @comradekingu
+* Fixed the hostname check to be case-insensitive, thanks @warwickmm
+* No longer removes AlphaFS and AlphaVSS files from non-Windows packages, thanks @warwickmm
+* Fixed a case where backups could run immediately and ignore the scheduled time, thanks @warwickmm
+* Added a database index that signficantly improves database rebuilds, thanks @warwickmm
+* Added MyCloudPlace as an S3 provider, thanks @cedbossneo
+* Improved errors from Json source, thanks @kenkendk
+* Changed mentions of "Amazon S3" to "S3 compatible", thanks @kenkendk
+
+2020-03-25 - 2.0.5.104_canary_2020-03-25
+==========
+* Improved log messags when using retetion rules, thanks @warwickmm
+* Added logging for USN soft-failures, thannks @drwtsn32x
+* Improved regexp magic for parsing Windows, thanks @drwtsn32x
+* Fixed storing `dlist` file after interrupted backup, thanks @seantempleton
+* Improved logic around throttle values, thanks @seantempleton
+* Fixed issues with Windows metadata and inheritance, thanks @drwtsn32x
+* Major code cleanup, removing unused members and other, thanks @warwickmm
+* Corrected retry attempts log message, thanks @warwickmm
+* Fixed device-type reports on Mono, thanks @warwickmm
+* Improved error messages during HTTP timeouts in some cases, thanks @warwickmm
+* Reworked the MS-Graph backend to use an alternate HTTP implementation, thanks @tygill
+* Fixed some cases where an interrupted backup could cause database corruption, thanks @seantempleton
+
+2020-02-18 - 2.0.5.103_canary_2020-02-18
+==========
+
+This is a rebuild of 2.0.5.102 with a fix for MacOS packages
+
+* Improved performance of the recovery-tool, thanks @tfriedel and @warwickmm
+* Debian and RPM packages now require Mono 5.0, thanks @drwtsn32x
+* Fixed issue with USN returning too many results, thanks @drwtsn32x
+* Code quality improvements, thanks @warwickmm
+* Added `.odg` and `.otg` as compressed file types, thanks @warwickmm
+* Improved USN changes by looking at size and attributes, thanks @drwtsn32x
+* Code quality improvements, thanks @drwtsn32x
+* Unittest improvements, thanks @warwickmm
+* The OVH backend now points to Keystone v3, thanks @warwickmm
+* Fixed allowing minutes in retention rules, thanks @Pectojin
+* Fixed loading SQLite on Windows, thanks @warwickmm
+
+2020-02-18 - 2.0.5.102_canary_2020-02-18
+==========
+* Improved performance of the recovery-tool, thanks @tfriedel and @warwickmm
+* Debian and RPM packages now require Mono 5.0, thanks @drwtsn32x
+* Fixed issue with USN returning too many results, thanks @drwtsn32x
+* Code quality improvements, thanks @warwickmm
+* Added `.odg` and `.otg` as compressed file types, thanks @warwickmm
+* Improved USN changes by looking at size and attributes, thanks @drwtsn32x
+* Code quality improvements, thanks @drwtsn32x
+* Unittest improvements, thanks @warwickmm
+* The OVH backend now points to Keystone v3, thanks @warwickmm
+* Fixed allowing minutes in retention rules, thanks @Pectojin
+* Fixed loading SQLite on Windows, thanks @warwickmm
+
+2020-01-23 - 2.0.5.101_canary_2020-01-23
+==========
+* Improved tests, thanks @drwtsn32x
+* Fixed a case where repair fails due to missing `dindex` files, thanks @warwickmm
+* Fixed an issue where compacted files would miss a blocklist, thanks @seantempleton
+* Now producing Docker multi-arch images, thanks @dnrce
+* Improved code quality and testing, thanks @warwickmm
+
+2020-01-18 - 2.0.5.100_canary_2020-01-18
+==========
+* Fixed issue with restoring permissions with inheritance, thanks @drwtsn32x
+* Improved tests, thanks @warwickmm
+* Fixed an issue that could be triggered by force stopping a backup, thanks @warwickmm
+
 2020-01-18 - 2.0.5.1_beta_2020-01-18
 ==========
 This beta release is a collection of additions and improvements from many contributors.
